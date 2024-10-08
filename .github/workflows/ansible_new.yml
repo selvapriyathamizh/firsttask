@@ -36,6 +36,9 @@ jobs:
       - name: ansible install
         run: sudo apt install ansible -y
 
+      - name: find the ansible version
+        run: ansible --version
+
       - name: ansible install
         run: |
          cd  ${{ github.workspace }}
