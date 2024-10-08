@@ -1,5 +1,7 @@
 - name: connect to ansible controlle
   hosts: localhost
+  roles:
+    - {role: infra.controller_configuration.credential_types, when: controller_credential_types is defined}
   tasks:
     - name: connect to ansible controller
       ansible.builtin.uri: 
@@ -8,3 +10,4 @@
           Content-Type: application/json
           Authorization: "Bearer gjyJzB5ekmrqLM3UfhVYerbMF0PXUl"
         validate_certs: false
+    
