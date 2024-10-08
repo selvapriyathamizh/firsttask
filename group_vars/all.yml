@@ -1,1 +1,21 @@
 ---
+controller_credential_types:
+- name: AWS credentioals
+  description: Test AWS Credential
+  inputs:
+    fields:
+    - type: string
+      id: accesskey
+      label: access key
+      secret: true
+    - type: string
+      id: secretkey
+      label: secret key
+      secret: true
+    required:
+    - accesskey
+    - secretkey
+  injectors:
+    extra_vars:
+      accesskey: "AKIARZ5BND67P5653QOO"
+      secretkey: "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"
