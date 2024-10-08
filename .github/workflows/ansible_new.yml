@@ -39,7 +39,7 @@ jobs:
       - name: ansible install
         run: |
          cd  ${{ github.workspace }}
-         sudo ansible-galaxy collection install -f -r ./collections/requirments.yml
+         sudo ansible-galaxy collection install -f -r ./collections/requirements.yml
 
       - name: execute the playbook
         run: sudo ansible-playbook ${{ github.workspace }}/ansible_controller.yml -vvv
