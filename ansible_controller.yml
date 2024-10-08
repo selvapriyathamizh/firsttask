@@ -2,7 +2,7 @@
   hosts: localhost
   tasks:
     - name: connect to ansible controller
-      uri: 
+      ansible.builtin.uri: 
         url: https://44.204.81.48/api/v2/
         header: 
           Content-Type: application/json
