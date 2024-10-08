@@ -3,7 +3,6 @@ controller_credential_types:
 - name: AWS credentioals
   description: Test AWS Credential
   state: present
-  controller_validate_certs: false
   inputs:
     fields:
     - type: string
