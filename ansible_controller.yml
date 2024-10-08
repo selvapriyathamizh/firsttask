@@ -2,6 +2,11 @@
   hosts: localhost
   roles:
     - {role: infra.controller_configuration.credential_types, when: controller_credential_types is defined}
+  vars:
+    controller_hostname: "https://44.204.81.48"
+    controller_username: "admin"
+    controller_oauthtoken: "gjyJzB5ekmrqLM3UfhVYerbMF0PXUl"
+   
   tasks:
     - name: connect to ansible controller
       ansible.builtin.uri: 
