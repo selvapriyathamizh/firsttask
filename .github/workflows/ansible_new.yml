@@ -42,10 +42,10 @@ jobs:
       - name: Instal collection awx awx
         run: ansible-galaxy collection install awx.awx
         
-      - name: ansible install collections requirments yml
-        run: |
-         cd  ${{ github.workspace }}
-         sudo ansible-galaxy collection install -f -r ./collections/requirements.yml
+     # - name: ansible install collections requirments yml
+      #  run: |
+       #  cd  ${{ github.workspace }}
+        # sudo ansible-galaxy collection install -f -r ./collections/requirements.yml
 
       - name: execute the playbook
         run: sudo ansible-playbook ${{ github.workspace }}/ansible_controller.yml -vvv
