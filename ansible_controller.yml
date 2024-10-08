@@ -6,6 +6,7 @@
     controller_hostname: "https://44.204.81.48"
     controller_username: "admin"
     controller_oauthtoken: "gjyJzB5ekmrqLM3UfhVYerbMF0PXUl"
+    controller_validate_certs: false
            
   tasks:
     - name: connect to ansible controller
