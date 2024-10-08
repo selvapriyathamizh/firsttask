@@ -6,6 +6,26 @@
     controller_hostname: "https://44.204.81.48"
     controller_username: "admin"
     controller_oauthtoken: "gjyJzB5ekmrqLM3UfhVYerbMF0PXUl"
+    credential_type_payload:
+      name: "AWS access key"
+      description: "A credential type for AWS Access Key authentication"
+      kind: "cloud"
+      inputs:
+        fields:
+          - id: "access_key"
+            label: "AWS Access Key"
+            type: "string"
+            secret: true
+          - id: "secret_key"
+            label: "AWS Secret Key"
+            type: "string"
+            secret: true
+          - id: "region"
+            label: "AWS Default Region"
+            type: "string"
+            secret: false
+         required: ["access_key", "secret_key", "region"]
+        
    
   tasks:
     - name: connect to ansible controller
@@ -15,4 +35,17 @@
           Content-Type: application/json
           Authorization: "Bearer gjyJzB5ekmrqLM3UfhVYerbMF0PXUl"
         validate_certs: false
+
+    - name: get the credentials types
+      ansible.builtin.uri:
+        url: "{{ controller_hostname }}/api/v2/credential_types/"
+        method: post
+        headers:
+          Authorization: "Bearer gjyJzB5ekmrqLM3UfhVYerbMF0PXUl"
+          Content-Type: "application/json"
+          body: "{{ credential_type_payload }}"
+          validate_certs: no
+      register: result
+
+    - debug: var=result
     
