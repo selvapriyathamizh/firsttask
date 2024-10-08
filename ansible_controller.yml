@@ -7,3 +7,4 @@
         headers: 
           Content-Type: application/json
           Authorization: "Bearer gjyJzB5ekmrqLM3UfhVYerbMF0PXUl"
+        validate_certs: false
