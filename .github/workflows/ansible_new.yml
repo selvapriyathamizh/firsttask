@@ -25,7 +25,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: ansible install
-        run: pip install ansible -y
+        run: apt install ansible -y
 
       - name: execute the playbook
         run: ansible-playbook ansible-controller.yml
