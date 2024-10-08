@@ -2,6 +2,7 @@
 controller_credential_types:
 - name: AWS credentioals
   description: Test AWS Credential
+  state: present
   inputs:
     fields:
     - type: string
@@ -15,7 +16,8 @@ controller_credential_types:
     required:
     - accesskey
     - secretkey
-  injectors:
-    extra_vars:
-      accesskey: "AKIARZ5BND67P5653QOO"
-      secretkey: "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"
+  injectors: {
+    'extra_vars': {
+      'accesskey': "AKIARZ5BND67P5653QOO",
+      'secretkey': "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"
+  }}
