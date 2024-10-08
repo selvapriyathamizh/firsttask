@@ -28,5 +28,5 @@ jobs:
         run: sudo apt install ansible -y
 
       - name: execute the playbook
-        run: sudo ansible-playbook ansible-controller.yml
+        run: sudo ansible-playbook ${{ github.workspace }}/ansible_controller.yml
 
