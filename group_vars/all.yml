@@ -18,6 +18,6 @@ controller_credential_types:
     - secretkey
   injectors: {
     'extra_vars': {
-      'accesskey': "AKIARZ5BND67P5653QOO",
-      'secretkey': "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"
+      'accesskey': "",
+      'secretkey': ""
   }}
