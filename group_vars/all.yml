@@ -18,6 +18,6 @@ controller_credential_types:
       - secretkey
     injectors: {
       'extra_vars': {
-        'accesskey': "{{ accesskey }}",
-        'secretkey': "{{ secretkey }}"
+        'accesskey': "{ { accesskey }}",
+        'secretkey': "{ { secretkey }}"
     }}
