@@ -2,7 +2,7 @@
 controller_credential_types:
   - name: API controller cli file
     description: API controller cli file
-#state: present
+    state: present
     inputs:
       fields:
         - id: tower_cli_api_url
