@@ -1,23 +1,23 @@
 ---
 controller_credential_types:
-- name: AWS credentioals
-  description: Test AWS Credential
-  state: present
-  inputs:
-    fields:
-    - type: string
-      id: accesskey
-      label: access key
-      secret: true
-    - type: string
-      id: secretkey
-      label: secret key
-      secret: true
-    required:
-    - accesskey
-    - secretkey
-  injectors: {
-    'extra_vars': {
-      'accesskey': "",
-      'secretkey': ""
-  }}
+name: API controller cli file
+description: API controller cli file
+#state: present
+inputs:
+  fields:
+    - id: tower_cli_api_url
+      type: string 
+      label: tower_cli_api_url
+    - id: tower_cli_api_token
+      type: string 
+      label: tower_cli API Toke
+  required: 
+    -  tower_cli_api_url
+    -  tower_cli_api_token
+injectors: 
+  file: 
+    template: "[general]\nhost = !unsafe \" {{ tower_cli_api_url }} \"\nverify_ssl = false\noauth_token = !unsafe \"{{ tower_cli_api_token }}\""
+  extra_vars:
+    TOWER_CLI_CFG_FILE: "{{ tower.filename }}"
+    tower_cli_api_token: "{{ tower_cli_api_token }}"
+    
