@@ -16,8 +16,8 @@ controller_credential_types:
       required:
       - accesskey
       - secretkey
-    injectors: {
-      'extra_vars': {
-        'accesskey': "{ { accesskey }}",
-        'secretkey': "{ { secretkey }}"
-    }}
+    injectors: 
+      extra_vars: 
+        accesskey: !unsafe "{{ accesskey }}"
+        secretkey: !unsafe "{{ secretkey }}"
+    
