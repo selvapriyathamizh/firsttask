@@ -9,6 +9,8 @@
     controller_validate_certs: false
            
   tasks:
+
+    - debug: var=controller_credential_types
     - name: connect to ansible controller
       ansible.builtin.uri: 
         url: https://52.73.124.144/api/v2/
