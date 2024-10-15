@@ -1,23 +1,23 @@
 ---
 controller_credential_types:
-name: API controller cli file
-description: API controller cli file
+  - name: API controller cli file
+    description: API controller cli file
 #state: present
-inputs:
-  fields:
-    - id: tower_cli_api_url
-      type: string 
-      label: tower_cli_api_url
-    - id: tower_cli_api_token
-      type: string 
-      label: tower_cli API Toke
-  required: 
-    -  tower_cli_api_url
-    -  tower_cli_api_token
-injectors: 
-  file: 
-    template: "[general]\nhost = !unsafe \" {{ tower_cli_api_url }} \"\nverify_ssl = false\noauth_token = !unsafe \"{{ tower_cli_api_token }}\""
-  extra_vars:
-    TOWER_CLI_CFG_FILE: "{{ tower.filename }}"
-    tower_cli_api_token: "{{ tower_cli_api_token }}"
+    inputs:
+      fields:
+        - id: tower_cli_api_url
+          type: string 
+          label: tower_cli_api_url
+        - id: tower_cli_api_token
+          type: string 
+          label: tower_cli API Toke
+      required: 
+        -  tower_cli_api_url
+        -  tower_cli_api_token
+    injectors: 
+      file: 
+        template: "[general]\nhost = !unsafe \" {{ tower_cli_api_url }} \"\nverify_ssl = false\noauth_token = !unsafe \"{{ tower_cli_api_token }}\""
+      extra_vars:
+        TOWER_CLI_CFG_FILE: "{{ tower.filename }}"
+        tower_cli_api_token: "{{ tower_cli_api_token }}"
     
