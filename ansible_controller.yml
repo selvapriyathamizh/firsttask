@@ -3,9 +3,9 @@
   roles:
     - {role: infra.controller_configuration.credential_types, when: controller_credential_types is defined}
   vars:
-    controller_hostname: "https://44.204.81.48"
+    controller_hostname: "https://52.73.124.144"
     controller_username: "admin"
-    controller_oauthtoken: "gjyJzB5ekmrqLM3UfhVYerbMF0PXUl"
+    controller_oauthtoken: "Fooym5yPjS8tKQULR61PCK9abNLtGk"
     controller_validate_certs: false
            
   tasks:
@@ -14,7 +14,7 @@
         url: https://44.204.81.48/api/v2/
         headers: 
           Content-Type: application/json
-          Authorization: "Bearer gjyJzB5ekmrqLM3UfhVYerbMF0PXUl"
+          Authorization: "Bearer Fooym5yPjS8tKQULR61PCK9abNLtGk"
         validate_certs: false
 
     
