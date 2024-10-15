@@ -11,7 +11,7 @@
   tasks:
     - name: connect to ansible controller
       ansible.builtin.uri: 
-        url: https://44.204.81.48/api/v2/
+        url: https://52.73.124.144/api/v2/
         headers: 
           Content-Type: application/json
           Authorization: "Bearer Fooym5yPjS8tKQULR61PCK9abNLtGk"
