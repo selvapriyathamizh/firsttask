@@ -18,6 +18,6 @@ controller_credential_types:
       - secretkey
     injectors: 
       extra_vars: 
-        accesskey: "[general]\nhost = \" {{ tower_cli_api_url }} \"\nverify_ssl = false\noauth_token = \"{{ tower_cli_api_token }}\""
+        accesskey: !unsafe "{{ accesskey }}"
         secretkey: !unsafe "{{ secretkey }}"
     
