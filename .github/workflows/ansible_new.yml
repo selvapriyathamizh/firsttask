@@ -32,6 +32,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
+      - name: Use python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
       - name: Install ansible and ansible lint
         run: |
           sudo apt-get update
