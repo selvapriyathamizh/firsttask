@@ -8,14 +8,24 @@
     controller_oauthtoken: "Fooym5yPjS8tKQULR61PCK9abNLtGk"
     controller_validate_certs: false           
   tasks:
+    - ansible.builtin.command: ansible-galaxy collection verify awx.awx
+      register: output
 
-    - debug: var=controller_credential_types
-    - name: connect to ansible controller
-      ansible.builtin.uri: 
-        url: https://54.173.4.1/api/v2/
-        headers: 
-          Content-Type: application/json
-          Authorization: "Bearer Fooym5yPjS8tKQULR61PCK9abNLtGk"
-        validate_certs: false
+    - debug: var=output
+
+    - ansible.builtin.command: ansible-galaxy collection verify ansible.controller
+      register: output1
+
+    - debug: var=output1
+
+    #- debug: var=controller_credential_types
+    #- name: connect to ansible controller
+     # ansible.builtin.uri: 
+      #  url: https://54.173.4.1/api/v2/
+       # headers: 
+        #  Content-Type: application/json
+         # Authorization: "Bearer Fooym5yPjS8tKQULR61PCK9abNLtGk"
+        #validate_certs: false
+        
 
     
