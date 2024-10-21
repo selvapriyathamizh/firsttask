@@ -30,7 +30,7 @@ controller_credentials:
       username: ec2-user
       ssh_key_data: |
         -----BEGIN RSA PRIVATE KEY-----
-        MIIEowIBAAKCAQEAvD4e0e+dhMG1g2QOqQbPhwyq0jnR1A3spxwDQpW6AdhvZJfh
+        MIIEowIBAAKCAQEAvD4e0e+dhMG1g2QOqQbPhwyq0jnR1A3spxwDQpW6AdhvZJfs
         ll64ikTDm2sHGYjyYm82Sco1Ep5cE6uYio9Idfv7c5rcPY6kxU5GMCBpk5h/IE7y
         InV0ktk4eO39TjhRCRe0J48Vzmdc5XtUMRlW0vaVqS10llVaOGtsyNqaOTx9xHft
         72aTefjDmHq4pt38kRXQnEtpn2LK8vLWuCfdZnrFkqtB7xRARL8pIG63HuOnYy81
