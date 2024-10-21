@@ -21,4 +21,12 @@ controller_credential_types:
       extra_vars: 
         accesskey: !unsafe "{{ accesskey }}"
         secretkey: !unsafe "{{ secretkey }}"
+controller_credentials:
+  - name: Connecting to the server
+    description: Credentials for GitLab
+    organization: Default
+    credential_type: Machine
+    inputs:
+      username: ec2-user
+      ssh_key_data: |
     
