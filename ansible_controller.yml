@@ -1,7 +1,7 @@
 - name: connect to ansible controlle
   hosts: localhost
   roles:
-    - {role: infra.controller_configuration.credential_types, when: controller_credential_types is defined}
+    - {role: infra.controller_configuration.credentials, when: controller_credentials is defined}
   vars:
     controller_hostname: "https://{{ aap_public_ip }}"
     controller_username: "admin"
