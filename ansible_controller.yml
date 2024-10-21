@@ -8,15 +8,6 @@
     controller_oauthtoken: "Fooym5yPjS8tKQULR61PCK9abNLtGk"
     controller_validate_certs: false           
   tasks:
-    - ansible.builtin.command: ansible-galaxy collection verify awx.awx
-      register: output
-
-    - debug: var=output
-
-    - ansible.builtin.command: ansible-galaxy collection verify ansible.controller
-      register: output1
-
-    - debug: var=output1
 
     #- debug: var=controller_credential_types
     #- name: connect to ansible controller
