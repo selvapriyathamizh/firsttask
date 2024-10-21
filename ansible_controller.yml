@@ -3,7 +3,7 @@
   roles:
     - {role: infra.controller_configuration.credential_types, when: controller_credential_types is defined}
   vars:
-    controller_hostname: "https://54.173.4.1"
+    controller_hostname: "https://{{ aap_public_ip }}"
     controller_username: "admin"
     controller_oauthtoken: "Fooym5yPjS8tKQULR61PCK9abNLtGk"
     controller_validate_certs: false           
