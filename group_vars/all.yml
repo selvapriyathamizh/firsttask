@@ -1,5 +1,5 @@
 ---
-aap_public_ip: "54.80.215.47"
+aap_public_ip: "3.80.34.169"
 controller_credential_types:
   - name: AWS credentioals
     description: Test AWS Credential
