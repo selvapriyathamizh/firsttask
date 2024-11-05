@@ -1,14 +1,20 @@
 - name: connect to ansible controlle
   hosts: localhost
-  roles:
-    - {role: infra.controller_configuration.credentials, when: controller_credentials is defined}
+  #roles:
+   # - {role: infra.controller_configuration.credentials, when: controller_credentials is defined}
   vars:
     controller_hostname: "https://{{ aap_public_ip }}"
     controller_username: "admin"
     controller_oauthtoken: "Fooym5yPjS8tKQULR61PCK9abNLtGk"
     controller_validate_certs: false           
   tasks:
-
+    - name: Import Secret files
+      ansible.builtin.include_vars:
+         file: ./secret.yml
+    - name: create credetnials
+      ansible.builtin.include_role:
+         name: infra.controller_configuration.credentials
+      when: controller_credentials is defined
     #- debug: var=controller_credential_types
     #- name: connect to ansible controller
      # ansible.builtin.uri: 
