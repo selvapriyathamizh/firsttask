@@ -50,7 +50,10 @@ jobs:
         run: |
          cd  ${{ github.workspace }}
          sudo ansible-galaxy collection install -f -r ./collections/requirements.yml
-
+      - name: create vault password file
+        run: |
+           echo "${{ secrets.VAULT_PW }}" > ${{ github.workspace }}/vault_pass.txt
+           
       - name: execute the playbook
-        run: sudo ansible-playbook ${{ github.workspace }}/ansible_controller.yml -vvv
+        run: sudo ansible-playbook ${{ github.workspace }}/ansible_controller.yml -v vault-password-file ${{ github.workspace }}/vault_pass.txt 
 
