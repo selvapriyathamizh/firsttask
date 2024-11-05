@@ -55,5 +55,5 @@ jobs:
            echo "${{ secrets.VAULT_PW }}" > ${{ github.workspace }}/vault_pass.txt
            
       - name: execute the playbook
-        run: sudo ansible-playbook ${{ github.workspace }}/ansible_controller.yml -v vault-password-file ${{ github.workspace }}/vault_pass.txt 
+        run: sudo ansible-playbook ${{ github.workspace }}/ansible_controller.yml --vault-password-file ${{ github.workspace }}/vault_pass.txt 
 
