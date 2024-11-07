@@ -40,7 +40,7 @@ jobs:
       - name: Install ansible and ansible lint
         run: |
           sudo apt-get update
-          sudo apt-get install -y python3-pip
+          sudo python3 -m pip install --upgrade pip
           sudo pip install ansible ansible-lint
 
       - name: find the ansible version
