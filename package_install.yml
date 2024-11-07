@@ -1,5 +1,6 @@
 ---
 - hosts: localhost
+  gather_facts: true
   vars:
     package_install:
       - apache2
@@ -13,3 +14,6 @@
 
     - name: Dsiplay the install stataus
       debug: var=install_status
+
+    - name: Dsiplay the information about localhost
+      debug: var=ansible_facts
