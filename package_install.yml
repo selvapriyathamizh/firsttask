@@ -5,7 +5,7 @@
       - httpd
   tasks:
     - name: Install httpd
-      yum:
+      apt:
         name: "{{ item }}"
         state: present
       loop: "{{ package_install }}"  
