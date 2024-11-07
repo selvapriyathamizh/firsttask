@@ -53,4 +53,4 @@ jobs:
          
       - name: Perform ansible lint
         run: |
-          ansible-lint
+          sudo ansible-lint
