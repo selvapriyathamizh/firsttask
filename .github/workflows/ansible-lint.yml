@@ -50,7 +50,11 @@ jobs:
         run: |
          cd  ${{ github.workspace }}
          sudo ansible-galaxy collection install -f -r ./collections/requirements.yml
-         
+
+      - name: execute the playbook
+        run: sudo ansible-playbook ${{ github.workspace }}/package_install.yml
       - name: Perform ansible lint
         run: |
           sudo ansible-lint
+
+          
