@@ -1,1 +1,58 @@
----
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+    
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    inputs: 
+      stage: 
+        type: choice
+        description: Which stage we have to deploy? 
+        default: test
+        required: true
+        options: 
+          - test
+          - prod
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+
+      - name: Use python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install ansible and ansible lint
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3-pip
+          sudo pip install ansible
+
+      - name: find the ansible version
+        run: ansible --version
+        
+      - name: ansible install collections requirments yml
+        run: |
+         cd  ${{ github.workspace }}
+         sudo ansible-galaxy collection install -f -r ./collections/requirements.yml
+      - name: create vault password file
+        run: |
+           echo "${{ secrets.VAULT_PW }}" > ${{ github.workspace }}/vault_pass.txt
+           
+      - name: execute the playbook
+        run: sudo ansible-playbook ${{ github.workspace }}/ansible_controller.yml --vault-password-file ${{ github.workspace }}/vault_pass.txt 
