@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  vars:
+    package_install:
+      - httpd
+  tasks:
+    - name: Install httpd
+      yum:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ package_install }}"  
