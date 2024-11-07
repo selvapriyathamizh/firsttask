@@ -9,3 +9,7 @@
         name: "{{ item }}"
         state: present
       loop: "{{ package_install }}"  
+      register: install_status
+
+    - name: Dsiplay the install stataus
+      debug: var=install_status
