@@ -2,7 +2,7 @@
 - hosts: localhost
   vars:
     package_install:
-      - httpd
+      - apache2
   tasks:
     - name: Install httpd
       apt:
